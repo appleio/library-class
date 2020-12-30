@@ -30,11 +30,13 @@ library = Library(2)
 book1 = Book(2)
 book2 = Book(2)
 book3 = Book(2)
+book0 = [book1 , book2 , book3]
 
 users = ["Anita" , "Anda", "Teo"]
 books1 = ["Maitrey" , "Lord of The Flies", "Crime and Punishment"]
 books2 = ["Papillon", "Hamlet"]
 books3 = ["The Boy in striped pajamas"]
+books0 = [books1,books2,books3]
 
 for user in users:
     if library.add_user(user):
