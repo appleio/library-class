@@ -3,7 +3,7 @@ class Library:
         self.capacity = capacity
         self.users = []
 
-    class Book:
+     class Book:
         def __init__(self,maxBooks):
             self.maxBooks = maxBooks
             self.books = []
@@ -15,7 +15,7 @@ class Library:
             if not self.free_space():
                 return False
             self.books.append(title)
-            return True
+            return True    
 
     def add_user(self,name):
         if not self.free_spots():
