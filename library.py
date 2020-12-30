@@ -3,7 +3,16 @@ class Library:
         self.capacity = capacity
         self.users = []
 
-     class Book:
+    def add_user(self,name):
+        if not self.free_spots():
+            return False
+        self.users.append(name)
+        return True
+
+    def free_spots(self):
+        return self.capacity - len(self.users)
+
+class Book:
         def __init__(self,maxBooks):
             self.maxBooks = maxBooks
             self.books = []
@@ -17,16 +26,10 @@ class Library:
             self.books.append(title)
             return True    
 
-    def add_user(self,name):
-        if not self.free_spots():
-            return False
-        self.users.append(name)
-        return True
-
-    def free_spots(self):
-        return self.capacity - len(self.users)
-
 library = Library(2)
+book1 = Book(2)
+book2 = Book(2)
+book3 = Book(2)
 
 users = ["Anita" , "Anda", "Teo"]
 books1 = ["Maitrey" , "Lord of The Flies", "Crime and Punishment"]
@@ -38,3 +41,21 @@ for user in users:
         print(f"Added {user} to the Library")
     else:
         print(f"No spots available for {user}")
+
+for books in books1:
+    if book1.add_book(books):
+        print(f"The book {books} was succesfully added")
+    else:
+        print(f"No available space for {books}")
+
+for books in books2:
+    if book2.add_book(books):
+        print(f"The book {books} was succesfully added")
+    else:
+        print(f"No available space for {books}")
+
+for books in books3:
+    if book3.add_book(books):
+        print(f"The book {books} was succesfully added")
+    else:
+        print(f"No available space for {books}")
